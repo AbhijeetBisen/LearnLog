@@ -20,9 +20,11 @@ app.set("view engine", "ejs");
 
 app.set("views", path.join(__dirname, "../views"));
 
+const allowedOrigins = [process.env.CLIENT_URL, "http://localhost:5173"].filter(Boolean);
+
 app.use(
   cors({
-    origin: ["http://localhost:5173"],
+    origin: allowedOrigins,
     credentials: true,
   }),
 );
@@ -30,7 +32,6 @@ app.use(
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
-app.use(express.static("public"));
 
 app.use("/api/auth", authRoutes);
 app.use("/api/journal", authMiddleware, journalRoutes);

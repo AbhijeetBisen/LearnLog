@@ -54,18 +54,14 @@ const registerController = async (req, res) => {
       <a href="${verificationLink}">Verify Email</a>`,
     );
 
-    let token = jwt.sign(
-      { id: newUser._id },
-      process.env.JWT_SECRET_KEY,
-      {
-        expiresIn: "1h",
-      },
-    );
+    let token = jwt.sign({ id: newUser._id }, process.env.JWT_SECRET_KEY, {
+      expiresIn: "1h",
+    });
 
     res.cookie("token", token, {
       httpOnly: true,
+      sameSite: "none",
       secure: process.env.NODE_ENV === "production",
-      sameSite: "strict",
       maxAge: 60 * 60 * 1000,
     });
 
@@ -150,18 +146,14 @@ const loginController = async (req, res) => {
       });
     }
 
-    let token = jwt.sign(
-      { id: user._id },
-      process.env.JWT_SECRET_KEY,
-      {
-        expiresIn: "1h",
-      },
-    );
+    let token = jwt.sign({ id: user._id }, process.env.JWT_SECRET_KEY, {
+      expiresIn: "1h",
+    });
 
     res.cookie("token", token, {
       httpOnly: true,
+      sameSite: "none",
       secure: process.env.NODE_ENV === "production",
-      sameSite: "strict",
       maxAge: 60 * 60 * 1000,
     });
 
@@ -183,7 +175,7 @@ const logoutController = async (req, res) => {
     res.clearCookie("token", {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
-      sameSite: "strict",
+      sameSite: "none",
     });
 
     return res.status(200).json({
