@@ -1,0 +1,191 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    sans-serif;
+}
+
+body {
+  background-color: #0f172a;
+
+  color: #f8fafc;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 100vh;
+
+  padding: 20px;
+}
+
+.dashboard-wrapper {
+  width: 100%;
+  max-width: 450px;
+
+  background-color: #1e293b;
+
+  border-radius: 18px;
+
+  border: 1px solid #334155;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 20px 25px -5px rgba(0, 0, 0, 0.3),
+    0 10px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+.dashboard-header {
+  background: linear-gradient(135deg,
+      #4f46e5,
+      #6366f1);
+
+  padding: 28px 24px;
+
+  color: white;
+}
+
+.dashboard-header h1 {
+  font-size: 1.4rem;
+
+  font-weight: 700;
+
+  margin-bottom: 10px;
+
+  letter-spacing: -0.02em;
+}
+
+.user-badge {
+  display: inline-flex;
+  align-items: center;
+
+  font-size: 0.85rem;
+
+  padding: 6px 12px;
+
+  border-radius: 30px;
+
+  background: rgba(255, 255, 255, 0.15);
+
+  color: #e0e7ff;
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+form {
+  padding: 30px 24px;
+}
+
+.form-field {
+  margin-bottom: 22px;
+}
+
+.form-field label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-size: 0.9rem;
+
+  color: #cbd5e1;
+
+  font-weight: 500;
+}
+
+input[type="password"] {
+  width: 100%;
+
+  padding: 14px 16px;
+
+  border-radius: 10px;
+
+  border: 1px solid #475569;
+
+  background-color: #0f172a;
+
+  color: white;
+
+  font-size: 1rem;
+
+  transition: 0.2s ease;
+}
+
+input[type="password"]::placeholder {
+  color: #64748b;
+}
+
+input[type="password"]:focus {
+  outline: none;
+
+  border-color: #818cf8;
+
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.25);
+}
+
+.action-panel {
+  margin-top: 30px;
+}
+
+button[type="submit"] {
+  width: 100%;
+
+  padding: 14px;
+
+  border: none;
+
+  border-radius: 10px;
+
+  background-color: #4f46e5;
+
+  color: white;
+
+  font-size: 1rem;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: all 0.2s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #4338ca;
+}
+
+button[type="submit"]:active {
+  transform: scale(0.98);
+}
+
+.error-message {
+  color: #f87171;
+
+  font-size: 0.85rem;
+
+  margin-top: 6px;
+}
+
+.success-message {
+  color: #4ade80;
+
+  font-size: 0.85rem;
+
+  margin-top: 6px;
+}
+
+@media (max-width: 480px) {
+
+  .dashboard-header,
+  form {
+    padding: 24px 20px;
+  }
+
+  .dashboard-header h1 {
+    font-size: 1.2rem;
+  }
+}

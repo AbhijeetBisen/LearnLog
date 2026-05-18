@@ -1,0 +1,36 @@
+# Node dependencies
+node_modules/
+
+# Frontend production build output
+Frontend/dist/
+
+# Local env files
+*.env
+Backend/.env
+Frontend/.env
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Optional IDE files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Backend database files / local data
+*.db
+*.sqlite
+
+# Build output / temp
+dist/
