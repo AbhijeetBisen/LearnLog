@@ -20,7 +20,11 @@ app.set("view engine", "ejs");
 
 app.set("views", path.join(__dirname, "../views"));
 
-const allowedOrigins = [process.env.CLIENT_URL, "http://localhost:5173"].filter(Boolean);
+const allowedOrigins = [
+  process.env.CLIENT_URL ? process.env.CLIENT_URL.replace(/\/$/, "") : null,
+  "http://localhost:5173",
+  "https://learn-log-gamma.vercel.app"
+].filter(Boolean);
 
 app.use(
   cors({
